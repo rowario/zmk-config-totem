@@ -73,10 +73,28 @@
 
         QWERTY {
             bindings = <
-         &kp Q  &kp W  &kp E     &kp R      &kp T       &kp Y     &kp U    &kp I      &kp O    &kp P
-         &kp A  &kp S  &kp D     &kp F      &kp G       &kp H     &kp J    &kp K      &kp L    &kp SEMI
-&kp TAB  &kp Z  &kp X  &kp C     &kp V      &kp B       &kp N     &kp M    &kp COMMA  &kp DOT  &kp FSLH  &kp SQT
-                       &kp LGUI  &kp SPACE  &kp LALT    &kp BSPC  &kp RET  &kp RALT
+         &kp Q  &kp W  &kp E     &kp R      &kp T    &kp Y     &kp U    &kp I      &kp O    &kp P
+         &kp A  &kp S  &kp D     &kp F      &kp G    &kp H     &kp J    &kp K      &kp L    &kp SEMI
+&kp TAB  &kp Z  &kp X  &kp C     &kp V      &kp B    &kp N     &kp M    &kp COMMA  &kp DOT  &kp FSLH  &kp SQT
+                       &kp LGUI  &kp SPACE  &mo 1    &kp BSPC  &kp RET  &mo 2
+            >;
+        };
+
+        NUMBERS {
+            bindings = <
+           &kp F1  &kp F2  &kp F3    &kp F4    &kp F5    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+           &kp N1  &kp N2  &kp N3    &kp N4    &kp N5    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
+&kp LSHFT  &trans  &trans  &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans   &kp RSHFT
+                           &kp LALT  &kp LGUI  &trans    &trans  &trans  &mo 2
+            >;
+        };
+
+        SYBMOLS {
+            bindings = <
+             &kp LS(UNDER)  &kp LS(PIPE)   &kp MINUS     &kp LS(LT)     &kp EQUAL        &kp LS(EXCL)  &kp LS(GT)    &kp LS(PLUS)   &kp FSLH     &kp LS(AMPS)
+             &kp LS(CARET)  &kp LS(TILDE)  &kp LS(LPAR)  &kp LS(LBRC)   &kp LBKT         &kp RBKT      &kp LS(RBRC)  &kp LS(RPAR)   &kp LS(DQT)  &kp LS(STAR)
+&kp LA(TAB)  &kp Z          &kp LS(PIPE)   &kp LS(AT)    &kp LS(POUND)  &kp LS(COLON)    &kp SEMI      &kp LS(DLLR)  &kp LS(PRCNT)  &kp DOT      &kp FSLH      &kp SQT
+                                           &trans        &trans         &mo 2            &trans        &trans        &trans
             >;
         };
     };
