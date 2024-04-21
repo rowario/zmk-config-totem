@@ -11,6 +11,7 @@
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 #define BASE 0
@@ -35,12 +36,6 @@
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp ESC>;
-        };
-
-        combo_tvp {
-            timeout-ms = <100>;
-            key-positions = <11 12 13>;
-            bindings = <&tog 0>;
         };
     };
 
@@ -73,10 +68,10 @@
 
         QWERTY {
             bindings = <
-         &kp Q  &kp W  &kp E     &kp R      &kp T    &kp Y     &kp U    &kp I      &kp O    &kp P
-         &kp A  &kp S  &kp D     &kp F      &kp G    &kp H     &kp J    &kp K      &kp L    &kp SEMI
-&kp TAB  &kp Z  &kp X  &kp C     &kp V      &kp B    &kp N     &kp M    &kp COMMA  &kp DOT  &kp FSLH  &kp SQT
-                       &kp LGUI  &kp SPACE  &mo 1    &kp BSPC  &kp RET  &mo 2
+                &kp Q  &kp W  &kp E     &kp R      &kp T    &kp Y     &kp U    &kp I      &kp O    &kp P
+                &kp A  &kp S  &kp D     &kp F      &kp G    &kp H     &kp J    &kp K      &kp L    &kp SEMI
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C     &kp V      &kp B    &kp N     &kp M    &kp COMMA  &kp DOT  &kp FSLH  &kp SQT
+                              &kp LGUI  &kp SPACE  &mo 1    &kp BSPC  &kp RET  &mo 2
             >;
         };
 
@@ -85,7 +80,7 @@
            &kp F1  &kp F2  &kp F3    &kp F4    &kp F5    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
            &kp N1  &kp N2  &kp N3    &kp N4    &kp N5    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
 &kp LSHFT  &trans  &trans  &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans   &kp RSHFT
-                           &kp LALT  &kp LGUI  &trans    &trans  &trans  &mo 2
+                           &kp LALT  &kp LGUI  &trans    &trans  &trans  &trans
             >;
         };
 
@@ -94,8 +89,26 @@
              &kp LS(UNDER)  &kp LS(PIPE)   &kp MINUS     &kp LS(LT)     &kp EQUAL        &kp LS(EXCL)  &kp LS(GT)    &kp LS(PLUS)   &kp FSLH     &kp LS(AMPS)
              &kp LS(CARET)  &kp LS(TILDE)  &kp LS(LPAR)  &kp LS(LBRC)   &kp LBKT         &kp RBKT      &kp LS(RBRC)  &kp LS(RPAR)   &kp LS(DQT)  &kp LS(STAR)
 &kp LA(TAB)  &kp Z          &kp LS(PIPE)   &kp LS(AT)    &kp LS(POUND)  &kp LS(COLON)    &kp SEMI      &kp LS(DLLR)  &kp LS(PRCNT)  &kp DOT      &kp FSLH      &kp SQT
-                                           &trans        &trans         &mo 2            &trans        &trans        &trans
+                                           &trans        &trans         &trans           &trans        &trans        &trans
             >;
+        };
+
+        SETTINGS {
+            bindings = <
+        &trans  &trans  &trans  &sys_reset  &bt BT_CLR    &kp C_VOL_UP  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans      &trans        &kp C_VOL_DN  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans      &trans        &kp C_MUTE    &trans  &trans  &trans  &trans  &kp LEFT_BRACKET
+                        &trans  &trans      &trans        &trans        &trans  &trans
+            >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        symbols {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
