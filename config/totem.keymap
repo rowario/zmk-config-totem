@@ -47,6 +47,21 @@
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <19 18>;
         };
+
+        FIRST_LAYER {
+            bindings = <&mo 1>;
+            key-positions = <37 34>;
+        };
+
+        SECOND_LAYER {
+            bindings = <&mo 2>;
+            key-positions = <37 33>;
+        };
+
+        THIRD_LAYER {
+            bindings = <&mo 3>;
+            key-positions = <37 32>;
+        };
     };
 
     keymap {
@@ -61,10 +76,10 @@
 
         QWERTY {
             bindings = <
-                &kp Q             &kp W  &kp E     &kp R      &kp T    &kp Y     &kp U    &kp I      &kp O    &kp P
-                &mt LEFT_SHIFT A  &kp S  &kp D     &kp F      &kp G    &kp H     &kp J    &kp K      &kp L    &mt RIGHT_SHIFT SEMI
-&kp LEFT_SHIFT  &kp Z             &kp X  &kp C     &kp V      &kp B    &kp N     &kp M    &kp COMMA  &kp DOT  &kp FSLH              &kp SQT
-                                         &kp LGUI  &kp SPACE  &mo 1    &kp BSPC  &kp RET  &mo 2
+                &kp Q  &kp W  &kp E     &kp R      &kp T               &kp Y     &kp U    &kp I          &kp O    &kp P
+                &kp A  &kp S  &kp D     &kp F      &kp G               &kp H     &kp J    &kp K          &kp L    &kp SEMI
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C     &kp V      &kp B               &kp N     &kp M    &kp COMMA      &kp DOT  &kp FSLH  &kp SQT
+                              &kp LGUI  &kp SPACE  &kp LEFT_CONTROL    &kp BSPC  &kp RET  &kp RIGHT_ALT
             >;
         };
 
