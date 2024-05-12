@@ -67,6 +67,11 @@
             bindings = <&mo 4>;
             key-positions = <33 36>;
         };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <10 11>;
+        };
     };
 
     keymap {
@@ -90,10 +95,10 @@
 
         NUMBERS {
             bindings = <
-           &kp F1                   &kp F2  &kp F3    &kp F4    &kp F5    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-           &mt LEFT_SHIFT NUMBER_1  &kp N2  &kp N3    &kp N4    &kp N5    &kp N6  &kp N7  &kp N8  &kp N9  &mt RIGHT_SHIFT NUMBER_0
-&kp LSHFT  &trans                   &trans  &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans                    &kp RSHFT
-                                            &kp LALT  &kp LGUI  &trans    &trans  &trans  &trans
+           &kp F1        &kp F2  &kp F3    &kp F4    &kp F5    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+           &kp NUMBER_1  &kp N2  &kp N3    &kp N4    &kp N5    &kp N6  &kp N7  &kp N8  &kp N9  &kp NUMBER_0
+&kp LSHFT  &trans        &trans  &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans        &kp RSHFT
+                                 &kp LALT  &kp LGUI  &trans    &trans  &trans  &trans
             >;
         };
 
@@ -106,21 +111,21 @@
             >;
         };
 
-        SETTINGS {
-            bindings = <
-        &trans  &trans  &trans  &sys_reset  &bt BT_CLR    &kp C_VOL_UP  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans      &trans        &kp C_VOL_DN  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans      &trans        &kp C_MUTE    &trans  &trans  &trans  &trans  &kp LEFT_BRACKET
-                        &trans  &trans      &trans        &trans        &trans  &trans
-            >;
-        };
-
         ARROWS {
             bindings = <
         &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans        &trans           &trans
         &trans  &trans  &trans  &trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans
                         &trans  &trans  &trans    &trans          &trans          &trans
+            >;
+        };
+
+        SETTINGS {
+            bindings = <
+        &trans  &trans  &trans  &sys_reset  &bt BT_CLR    &kp C_VOL_UP  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans      &trans        &kp C_VOL_DN  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans      &trans        &kp C_MUTE    &trans  &trans  &trans  &trans  &kp LEFT_BRACKET
+                        &trans  &trans      &trans        &trans        &trans  &trans
             >;
         };
     };
