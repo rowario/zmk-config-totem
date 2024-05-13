@@ -74,7 +74,7 @@
         };
 
         tilda {
-            bindings = <&kp TILDE>;
+            bindings = <&kp GRAVE>;
             key-positions = <1 2>;
         };
     };
