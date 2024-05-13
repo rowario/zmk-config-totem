@@ -72,6 +72,11 @@
             bindings = <&kp TAB>;
             key-positions = <10 11>;
         };
+
+        tilda {
+            bindings = <&kp TILDE>;
+            key-positions = <1 2>;
+        };
     };
 
     keymap {
